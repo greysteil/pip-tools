@@ -8,6 +8,9 @@ def test_format_requirement(from_line):
     ireq = from_line('test==1.2')
     assert format_requirement(ireq) == 'test==1.2'
 
+    ireq = from_line('Foo_bar==1.2')
+    assert format_requirement(ireq) == 'foo-bar==1.2'
+
 
 def test_format_requirement_editable(from_editable):
     ireq = from_editable('git+git://fake.org/x/y.git#egg=y')

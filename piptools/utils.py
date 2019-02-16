@@ -61,7 +61,7 @@ def format_requirement(ireq, marker=None, hashes=None):
     if ireq.editable:
         line = '-e {}'.format(ireq.link)
     else:
-        line = str(ireq.req).lower()
+        line = str(ireq.req).replace('_', '-').lower()
 
     if hashes:
         for hash_ in sorted(hashes):
